@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h2>
+                Resultado: <span class="resultado"></span>
+            </h2>
+            <div>
+                <div>
+                    <div>
+                        <label for="">Valor 1</label>
+                        <input id="valor1" type="text">
+                    </div>
+                    <div>
+                        <label for="">Valor 2</label>
+                        <input id="valor2" type="text">
+                    </div>
+                    <div style="display: flex">
+                        <button id="btn-sumar" type="button">
+                            Sumar
+                        </button>
+                        <button id="btn-restar" type="button">
+                            Restar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Escríbe aquí tu código
+        const btnSumar = document.getElementById("btn-sumar");
+        const btnRestar = document.getElementById("btn-restar");
+
+        btnSumar.addEventListener("click", function () {
+            const valor1 = document.getElementById("valor1").value;
+            const valor2 = document.getElementById("valor2").value;
+
+            let resultadoSumar = parseInt(valor1) + parseInt(valor2);
+            const spanResultado = document.querySelector(".resultado");
+            spanResultado.innerHTML = resultadoSumar;
+        });
+
+        btnRestar.addEventListener("click", function () {
+            const valor1 = document.getElementById("valor1").value;
+            const valor2 = document.getElementById("valor2").value;
+
+            let resultadoRestar = parseInt(valor1) - parseInt(valor2);
+            const spanResultado = document.querySelector(".resultado");
+
+            if (resultadoRestar < 0) {
+                spanResultado.innerHTML = 0;
+            }
+            else {
+                spanResultado.innerHTML = resultadoRestar;
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
